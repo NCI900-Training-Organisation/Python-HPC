@@ -1,5 +1,7 @@
 from threading import Thread
 import time
+import pretty_errors
+
 
 class InsufficientFundsException(Exception):
     "Insufficient funds."
@@ -28,7 +30,7 @@ if __name__ == "__main__":
 
     add_thread = Thread(target=deposit, args=(10,int(1e4)))
     sub_thread = Thread(target=withdraw, args=(10,int(1e4)))
-    
+
     add_thread.start()
     sub_thread.start()
     
